@@ -16,9 +16,12 @@ export default async function Result({ params }: { params: { id: string } }) {
       <h1>Tu próxima lectura</h1>
       {profile.resumen && <p className="lead">{profile.resumen}</p>}
       <p className="muted">
-        {picks.length === 1 ? "Encontramos 1 libro" : `Encontramos ${picks.length} libros`} que encajan con tu perfil.
+        {picks.length === 1
+          ? "Encontramos 1 libro"
+          : `Encontramos ${picks.length} libros`}{" "}
+        que encajan con tu perfil.
       </p>
-      <div className="catalogo">
+      <div className="listado catalogo">
         {picks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
